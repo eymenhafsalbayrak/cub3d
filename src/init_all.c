@@ -81,7 +81,10 @@ void	init_mlx(t_game *game)
 			SCREEN_HEIGHT, "denyo");
 	game->image = malloc(sizeof(t_data));
 	if (!game->image)
+	{
+		free_all(game->window);
 		exit(1);
+	}
 	game->image->img = mlx_new_image(game->mlx, SCREEN_WIDTH, SCREEN_HEIGHT);
 	game->image->addr = (int *)mlx_get_data_addr(game->image->img, &a, &a, &a);
 }

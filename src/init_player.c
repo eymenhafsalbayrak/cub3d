@@ -84,8 +84,8 @@ void	init_player(t_game *game)
 	game->player->dir_y = 0;
 	game->player->plane_x = 0;
 	game->player->plane_y = 0;
-	game->player->rot_speed = 0.1;
-	game->player->speed = 0.05;
+	game->player->rot_speed = 0.04;
+	game->player->speed = 0.03;
 	find_positon(game->player, game);
 	check_positon(game);
 }
