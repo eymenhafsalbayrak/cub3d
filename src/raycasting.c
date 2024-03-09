@@ -6,7 +6,7 @@
 /*   By: ealbayra <ealbayra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 19:37:50 by ealbayra          #+#    #+#             */
-/*   Updated: 2024/03/07 19:38:30 by ealbayra         ###   ########.fr       */
+/*   Updated: 2024/03/09 18:27:01 by ealbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,9 @@ static void	draw_vertical(t_game *game, int x, int side, int y)
 	while (++y < SCREEN_HEIGHT)
 	{
 		game->draw->tex_y = (int)game->draw->tex_pos;
-		if (y < game->draw->draw_s)
+		if (y <= game->draw->draw_s)
 			game->draw->color = game->tex->ceilingc;
-		else if (y > game->draw->draw_e)
+		else if (y >= game->draw->draw_e)
 			game->draw->color = game->tex->floorc;
 		else
 		{
