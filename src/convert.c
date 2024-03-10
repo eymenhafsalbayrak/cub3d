@@ -6,11 +6,11 @@
 /*   By: ealbayra <ealbayra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:45:26 by ealbayra          #+#    #+#             */
-/*   Updated: 2024/03/07 19:35:07 by ealbayra         ###   ########.fr       */
+/*   Updated: 2024/03/10 15:33:15 by ealbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "../include/cub3D.h"
 #include "../mlx/mlx.h"
 #include <stdlib.h>
 
@@ -28,9 +28,6 @@ void	get_addresses(t_game *game)
 		= (int *)mlx_get_data_addr(game->tex->we->img, &i, &i, &i);
 }
 
-/*
-renk kodu olusturma
-*/
 unsigned int	get_color(int *array)
 {
 	unsigned int	ret;

@@ -6,14 +6,13 @@
 /*   By: ealbayra <ealbayra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 17:35:28 by ealbayra          #+#    #+#             */
-/*   Updated: 2024/03/07 19:35:58 by ealbayra         ###   ########.fr       */
+/*   Updated: 2024/03/10 15:33:19 by ealbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "../include/cub3D.h"
 #include "../mlx/mlx.h"
 #include <stdlib.h>
-#include "../libft/libft.h"
 
 void	init_map_data(t_game *game)
 {
@@ -78,7 +77,7 @@ void	init_mlx(t_game *game)
 
 	game->mlx = mlx_init();
 	game->window = mlx_new_window(game->mlx, SCREEN_WIDTH,
-			SCREEN_HEIGHT, "denyo");
+			SCREEN_HEIGHT, "cub3D");
 	game->image = malloc(sizeof(t_data));
 	if (!game->image)
 	{

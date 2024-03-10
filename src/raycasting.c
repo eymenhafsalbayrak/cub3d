@@ -6,13 +6,12 @@
 /*   By: ealbayra <ealbayra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 19:37:50 by ealbayra          #+#    #+#             */
-/*   Updated: 2024/03/09 18:27:01 by ealbayra         ###   ########.fr       */
+/*   Updated: 2024/03/10 16:14:10 by ealbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "../include/cub3D.h"
 #include "../mlx/mlx.h"
-#include <stdio.h>
 
 int	perform_ray(t_game *game, int side)
 {

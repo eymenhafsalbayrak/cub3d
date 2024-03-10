@@ -6,11 +6,11 @@
 /*   By: ealbayra <ealbayra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 17:38:14 by ealbayra          #+#    #+#             */
-/*   Updated: 2024/03/07 19:34:30 by ealbayra         ###   ########.fr       */
+/*   Updated: 2024/03/10 15:33:12 by ealbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "../include/cub3D.h"
 #include <math.h>
 
 void	calculate_ray(t_game *game, int x)

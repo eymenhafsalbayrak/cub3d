@@ -6,11 +6,11 @@
 /*   By: ealbayra <ealbayra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:05:54 by ealbayra          #+#    #+#             */
-/*   Updated: 2024/03/07 21:19:57 by ealbayra         ###   ########.fr       */
+/*   Updated: 2024/03/10 15:33:29 by ealbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "../include/cub3D.h"
 #include <stdlib.h>
 
 void	find_positon(t_player *player, t_game *game)

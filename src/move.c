@@ -6,12 +6,11 @@
 /*   By: ealbayra <ealbayra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 19:38:42 by ealbayra          #+#    #+#             */
-/*   Updated: 2024/03/07 19:39:19 by ealbayra         ###   ########.fr       */
+/*   Updated: 2024/03/10 15:33:51 by ealbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
-#include <stdlib.h>
+#include "../include/cub3D.h"
 #include <math.h>
 
 void	w_and_k(t_game *game)

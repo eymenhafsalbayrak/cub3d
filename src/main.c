@@ -6,12 +6,11 @@
 /*   By: ealbayra <ealbayra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 15:48:44 by ealbayra          #+#    #+#             */
-/*   Updated: 2024/03/07 19:49:38 by ealbayra         ###   ########.fr       */
+/*   Updated: 2024/03/10 16:14:05 by ealbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
-#include "../libft/libft.h"
+#include "../include/cub3D.h"
 #include "../mlx/mlx.h"
 #include <stdio.h>
 
