@@ -6,7 +6,7 @@
 /*   By: ealbayra <ealbayra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 18:22:37 by ealbayra          #+#    #+#             */
-/*   Updated: 2024/03/10 15:33:35 by ealbayra         ###   ########.fr       */
+/*   Updated: 2024/03/12 20:17:32 by ealbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,30 +26,10 @@ int	get_int(char **floor, char **ceil, int i, int flag)
 	return (tmp);
 }
 
-void	is_number(char *s1, char *s2, t_game *game)
+void	is_number(char **s1, char **s2, t_game *game)
 {
-	int	i;
-
-	i = 0;
-	while (s1[i])
-	{
-		if (!ft_isdigit(s1[i]))
-		{
-			free_all(game);
-			ft_exit("error: floor value must be have an integer value");
-		}
-		++i;
-	}
-	i = 0;
-	while (s2[i])
-	{
-		if (!ft_isdigit(s2[i]))
-		{
-			free_all(game);
-			ft_exit("error: ceil value must be have an integer value");
-		}
-		++i;
-	}
+	check_number(s1, s2, game);
+	check_number(s2, s1, game);
 }
 
 void	cf_valid_extern(t_game *game, char **floor, char **ceil, int i)
@@ -63,9 +43,7 @@ void	cf_valid_extern(t_game *game, char **floor, char **ceil, int i)
 	{
 		tmp = get_int(floor, ceil, i, flag);
 		if ((tmp < 0 || tmp > 255) || i > 3)
-			(free_all(game), ft_exit(
-					"error: floor and ceil value must be in RGB range: 0 - 255")
-			);
+			free_valid(floor, ceil, game);
 		if (flag == 0)
 			game->map_data.floor_val[i] = tmp;
 		if (flag == 1)
@@ -81,14 +59,23 @@ void	cf_valid_extern(t_game *game, char **floor, char **ceil, int i)
 	}
 }
 
-void	cf_valid(t_game *game, char **floor, char **ceil, int i)
+void	cf_valid(t_game *game, char **floor, char **ceil)
 {
-	while (floor[i] && ceil[i])
-	{
-		is_number(floor[i], ceil[i], game);
-		++i;
-	}
+	is_number(floor, ceil, game);
 	game->map_data.ceil_val = malloc(sizeof(int) * 3);
+	if (!game->map_data.ceil_val)
+	{
+		free_double(floor);
+		free_double(ceil);
+		free_all(game);
+	}
 	game->map_data.floor_val = malloc(sizeof(int) * 3);
+	if (!game->map_data.floor_val)
+	{
+		free(game->map_data.ceil_val);
+		free_double(floor);
+		free_double(ceil);
+		free_all(game);
+	}
 	cf_valid_extern(game, floor, ceil, 0);
 }

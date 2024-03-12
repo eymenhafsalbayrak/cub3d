@@ -6,7 +6,7 @@
 /*   By: ealbayra <ealbayra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:45:26 by ealbayra          #+#    #+#             */
-/*   Updated: 2024/03/10 15:33:15 by ealbayra         ###   ########.fr       */
+/*   Updated: 2024/03/12 19:48:03 by ealbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	init_texture(t_game *game)
 {
 	game->tex = malloc(sizeof(t_texture));
 	if (!game->tex)
-		exit(1);
+		free_all(game);
 	game->tex->no = malloc(sizeof(t_data));
 	if (!game->tex->no)
 		exit(1);

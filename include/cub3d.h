@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ealbayra <ealbayra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ezcakir <ezcakir@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 15:46:22 by ealbayra          #+#    #+#             */
-/*   Updated: 2024/03/07 19:45:45 by ealbayra         ###   ########.fr       */
+/*   Updated: 2024/03/12 18:58:42 by ezcakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,12 +135,18 @@ void	free_all(t_game *game);
 void	free_double(char **str);
 void	convert_xpm(t_game *game);
 void	player_check(t_game *game, char way);
-void	cf_valid(t_game *game, char **floor, char **ceil, int i);
+void	cf_valid(t_game *game, char **floor, char **ceil);
 int		key_press(int keycode, t_game *game);
 int		key_relase(int keycode, t_game *game);
 void	movements(t_game *game);
 int		ray_casting(t_game *game);
 void	calculate_ray(t_game *game, int x);
 void	calculate_steps(t_game *game);
+void	free_all_ext(t_game *game);
+void	free_valid(char **floor, char **ceil, t_game *game);
+void	free_number(char **s1, char **s2, t_game *game);
+void	check_number(char **s1, char **s2, t_game *game);
+void	check_number2(char **s1, char **s2, t_game *game);
+void	parse_map_utils(t_game *game, int j, int i, char **regex);
 
 #endif

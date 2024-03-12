@@ -6,7 +6,7 @@
 /*   By: ealbayra <ealbayra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:05:54 by ealbayra          #+#    #+#             */
-/*   Updated: 2024/03/10 15:33:29 by ealbayra         ###   ########.fr       */
+/*   Updated: 2024/03/12 19:21:09 by ealbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,15 +77,15 @@ void	init_player(t_game *game)
 {
 	game->player = malloc(sizeof(t_player));
 	if (!game->player)
-		exit(1);
+		free_all(game);
 	game->player->pos_x = 0.5;
 	game->player->pos_y = 0.5;
 	game->player->dir_x = 0;
 	game->player->dir_y = 0;
 	game->player->plane_x = 0;
 	game->player->plane_y = 0;
-	game->player->rot_speed = 0.04;
-	game->player->speed = 0.03;
+	game->player->rot_speed = 0.05;
+	game->player->speed = 0.05;
 	find_positon(game->player, game);
 	check_positon(game);
 }

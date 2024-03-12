@@ -6,7 +6,7 @@
 /*   By: ealbayra <ealbayra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 16:54:30 by ealbayra          #+#    #+#             */
-/*   Updated: 2024/03/10 15:33:25 by ealbayra         ###   ########.fr       */
+/*   Updated: 2024/03/12 19:48:14 by ealbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,15 @@ void	parse_map(t_game *game, char *map, int len)
 		++len;
 		++j;
 	}
-	game->map = malloc(sizeof(char *) * len + 1);
+	game->map = malloc(sizeof(char *) * (len + 1));
 	if (!game->map)
-		exit(1);
-	j = 0;
-	while (regex[i])
 	{
-		game->map[j] = ft_strdup(regex[i]);
-		++i;
-		++j;
+		free_double(regex);
+		free_all(game);
+		return ;
 	}
-	game->map[j] = NULL;
+	j = 0;
+	parse_map_utils(game, j, i, regex);
 	free_double(regex);
 }
 
@@ -90,7 +88,7 @@ void	init_map(t_game *game, char *file)
 	len = 0;
 	data = malloc(sizeof(char) * 2);
 	if (!data)
-		exit(1);
+		free_all(game);
 	map = read_map(file, data);
 	free(data);
 	init_all(game);

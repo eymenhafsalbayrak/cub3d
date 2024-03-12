@@ -6,7 +6,7 @@
 /*   By: ealbayra <ealbayra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 17:25:47 by ealbayra          #+#    #+#             */
-/*   Updated: 2024/03/10 15:33:58 by ealbayra         ###   ########.fr       */
+/*   Updated: 2024/03/12 19:48:51 by ealbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	free_double(char **str)
 		free(str[i]);
 		++i;
 	}
-	free(str);
+	if (str)
+		free(str);
 }
 
 void	ft_exit(char *str)
@@ -37,25 +38,12 @@ void	ft_exit(char *str)
 
 void	free_all_ext(t_game *game)
 {
-	if (game->tex)
-	{
-		mlx_destroy_image(game->mlx, game->tex->no->img);
-		mlx_destroy_image(game->mlx, game->tex->so->img);
-		mlx_destroy_image(game->mlx, game->tex->ea->img);
-		mlx_destroy_image(game->mlx, game->tex->we->img);
-	}
-	if (game->map_data.north)
-	{
-		free(game->map_data.north);
-		free(game->map_data.south);
-		free(game->map_data.east);
-		free(game->map_data.west);
-		if (game->map_data.ceil)
-		{
-			free(game->map_data.ceil);
-			free(game->map_data.floor);
-		}
-	}
+	free(game->map_data.north);
+	free(game->map_data.south);
+	free(game->map_data.east);
+	free(game->map_data.west);
+	free(game->map_data.ceil);
+	free(game->map_data.floor);
 }
 
 void	free_all(t_game *game)
@@ -75,6 +63,14 @@ void	free_all(t_game *game)
 		mlx_destroy_window(game->mlx, game->window);
 	if (game->player)
 		free(game->player);
+	if (game->tex)
+	{
+		mlx_destroy_image(game->mlx, game->tex->no);
+		mlx_destroy_image(game->mlx, game->tex->so);
+		mlx_destroy_image(game->mlx, game->tex->ea);
+		mlx_destroy_image(game->mlx, game->tex->we);
+		free(game->tex);
+	}
 	free_all_ext(game);
 }
 
@@ -88,7 +84,7 @@ char	*ft_straddchar(char *s1, char *s2)
 	len = ft_strlen(s1) + ft_strlen(s2);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
-		return (0);
+		free(str);
 	ft_strlcpy(str, s1, ft_strlen(s1) + 1);
 	ft_strlcat(str, s2, ft_strlen(s1) + ft_strlen(s2) + 1);
 	free(s1);

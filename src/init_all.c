@@ -6,7 +6,7 @@
 /*   By: ealbayra <ealbayra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 17:35:28 by ealbayra          #+#    #+#             */
-/*   Updated: 2024/03/10 15:33:19 by ealbayra         ###   ########.fr       */
+/*   Updated: 2024/03/12 19:48:07 by ealbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	init_draw(t_game *game)
 {
 	game->draw = malloc(sizeof(t_draw));
 	if (!game->draw)
-		exit(1);
+		free_all(game);
 	game->draw->color = 0;
 	game->draw->draw_e = 0;
 	game->draw->draw_s = 0;
@@ -56,7 +56,7 @@ void	init_raycasting(t_game *game)
 {
 	game->ray = malloc(sizeof(t_ray));
 	if (!game->ray)
-		exit(1);
+		free_all(game);
 	game->ray->camera_x = 0;
 	game->ray->delta_distx = 0;
 	game->ray->delta_disty = 0;

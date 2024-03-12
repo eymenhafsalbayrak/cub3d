@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ealbayra <ealbayra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ezcakir <ezcakir@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 18:29:20 by ealbayra          #+#    #+#             */
-/*   Updated: 2024/03/10 15:33:38 by ealbayra         ###   ########.fr       */
+/*   Updated: 2024/03/12 18:46:40 by ezcakir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	check_c_and_f(t_game *game)
 		free_all(game);
 		ft_exit("error: invalid floor or ceil value");
 	}
-	cf_valid(game, floor, ceil, 0);
+	cf_valid(game, floor, ceil);
 	free_double(floor);
 	free_double(ceil);
 }
